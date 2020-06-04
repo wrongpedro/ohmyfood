@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 3 - Open Classroom",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/style.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrongpedro/ohmyfood.git"
+  },
+  "author": "Laurent BERRE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrongpedro/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/wrongpedro/ohmyfood#readme"
+}
