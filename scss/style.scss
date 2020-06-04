@@ -2,9 +2,31 @@
 
 /*VARIABLES*/
 
+$theme-font: 'Roboto';
+$font-text1: 'Segoe Print';
+$font-text2: 'Cambria';
+$font-menu1: 'Devonshire';
+$font-menu2: 'Croissant One';
+$font-menu3: 'Dancing Script';
+$font-menu4: 'Kaushan Script';
+
+
 $theme-color1:#579c87;
 $theme-color2:#fdcb46;
-$theme-font:'roboto';
+
+$menu1-back:#fcdfdb;
+$menu1-text:#3c1218;
+$menu1-icon:#f05160;
+
+$menu2-back:#fff5fe;
+$menu2-text:#c77412;
+
+$menu3-back:#f9f9f9;
+$menu3-text:#0431df;
+
+$menu4-back:#fdfffd;
+$menu4-text:#4c9f42;
+
 
 *{
     margin: 0;
@@ -31,6 +53,13 @@ header,footer{
 main{
     justify-content: center;
     width: 500px;
+    h2{
+        font-size: 3em;
+        margin-bottom: 0.5em;
+    }
+    p{
+        font-size: 3em;
+    }
     @media screen and (min-width:768px){
         justify-content: space-around;
         width: 768px; 
@@ -67,8 +96,8 @@ header{
     a{
         font-family: $theme-font, sans-serif;
         font-size: 5em;
-        font-weight: 500;
-        letter-spacing: -0.1em;
+        font-weight: 700;
+        letter-spacing: -0.08em;
     }
 }
 
@@ -82,7 +111,6 @@ section{
     background-color: grey;
     a:link, a:visited{
         text-decoration: none;
-        color: black;
     } 
 }
 
@@ -97,6 +125,68 @@ section{
     @media screen and (min-width:992px){
         width: 38%;
         height: 35em;
+    }
+}
+
+.menu1{
+    background-color: $menu1-back;
+    a:link, a:visited{
+        color: $menu1-text;
+    }
+    i{
+        color: $menu1-icon;
+    }
+    h2{
+        font-family: $font-menu1;
+        font-weight: lighter;
+    }
+    p{
+        font-family: $font-text1;
+        text-transform: uppercase;
+    }
+}
+
+.menu2{
+    background-color: $menu2-back;
+    a:link, a:visited{
+        color: $menu2-text;
+    }
+    h2{
+        font-family: $font-menu2;
+        font-weight: lighter;
+        font-size: 2em;
+    }
+    p{
+        font-family: $font-text2;
+        font-weight: bold;
+    }
+}
+
+.menu3{
+    background-color: $menu3-back;
+    a:link, a:visited{
+        color: $menu3-text;
+    }
+    h2{
+        font-family: $font-menu3;
+        font-size: 2.8em;
+    }
+    p{
+        font-family: $font-text1;
+    }
+}
+
+.menu4{
+    background-color: $menu3-back;
+    a:link, a:visited{
+        color: $menu4-text;
+    }
+    h2{
+        font-family: $font-menu4;
+        font-weight: lighter;
+    }
+    p{
+        font-family: $font-text1;
     }
 }
 

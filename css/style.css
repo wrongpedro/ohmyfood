@@ -26,6 +26,13 @@ main {
   justify-content: center;
   width: 500px;
 }
+main h2 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+main p {
+  font-size: 3em;
+}
 @media screen and (min-width: 768px) {
   main {
     justify-content: space-around;
@@ -44,7 +51,7 @@ main {
   height: 2em;
   justify-content: center;
   align-items: center;
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 2em;
   background-color: #579c87;
   color: #fdcb46;
@@ -62,10 +69,10 @@ header {
   padding: 2em 0;
 }
 header a {
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 5em;
-  font-weight: 500;
-  letter-spacing: -0.1em;
+  font-weight: 700;
+  letter-spacing: -0.08em;
 }
 
 /*MAIN*/
@@ -78,7 +85,6 @@ section {
 }
 section a:link, section a:visited {
   text-decoration: none;
-  color: black;
 }
 
 .menu-home {
@@ -99,13 +105,75 @@ section a:link, section a:visited {
   }
 }
 
+.menu1 {
+  background-color: #fcdfdb;
+}
+.menu1 a:link, .menu1 a:visited {
+  color: #3c1218;
+}
+.menu1 i {
+  color: #f05160;
+}
+.menu1 h2 {
+  font-family: "Devonshire";
+  font-weight: lighter;
+}
+.menu1 p {
+  font-family: "Segoe Print";
+  text-transform: uppercase;
+}
+
+.menu2 {
+  background-color: #fff5fe;
+}
+.menu2 a:link, .menu2 a:visited {
+  color: #c77412;
+}
+.menu2 h2 {
+  font-family: "Croissant One";
+  font-weight: lighter;
+  font-size: 2em;
+}
+.menu2 p {
+  font-family: "Cambria";
+  font-weight: bold;
+}
+
+.menu3 {
+  background-color: #f9f9f9;
+}
+.menu3 a:link, .menu3 a:visited {
+  color: #0431df;
+}
+.menu3 h2 {
+  font-family: "Dancing Script";
+  font-size: 2.8em;
+}
+.menu3 p {
+  font-family: "Segoe Print";
+}
+
+.menu4 {
+  background-color: #f9f9f9;
+}
+.menu4 a:link, .menu4 a:visited {
+  color: #4c9f42;
+}
+.menu4 h2 {
+  font-family: "Kaushan Script";
+  font-weight: lighter;
+}
+.menu4 p {
+  font-family: "Segoe Print";
+}
+
 /*FOOTER*/
 footer {
   justify-content: space-between;
   padding: 2em 0;
 }
 footer a {
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.5em;
   margin: 0 1em;
 }
