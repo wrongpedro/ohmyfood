@@ -20,6 +20,9 @@ $menu1-icon:#f05160;
 
 $menu2-back:#fff5fe;
 $menu2-text:#c77412;
+$menu2-text1:#c67412;
+$menu2-text2:#a56799;
+$menu2-text3:#6e4ccc;
 
 $menu3-back:#f9f9f9;
 $menu3-text:#0431df;
@@ -32,7 +35,7 @@ $menu4-text:#4c9f42;
     margin: 0;
 }
 
-body,header,main,section,.btn,footer{
+body,header,main,section,.menu-page,article,.signature,.btn,footer{
     display: flex;
     flex-wrap: wrap;
 }
@@ -66,9 +69,35 @@ main{
     }
     @media screen and (min-width:992px){
         justify-content: space-around;
-        width: 992px; 
+        width: 992px;
     }
     
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    font-family: $theme-font;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+}
+
+article{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    font-size: 0.7em;
+    padding: 1em 0 2em 0;
+}
+
+li{
+    padding-bottom: 0.5em;
 }
 
 .btn{
@@ -81,21 +110,17 @@ main{
     background-color: $theme-color1;
     color: $theme-color2;
     border-radius: 0.3em;
-    margin: 1.5em 0;
-}
-
-ul{
-    list-style: none;
+    margin: 1.5em 0 5em 0;
 }
 
 /*HEADER*/
 
 header{
     justify-content: center;
-    padding: 2em 0;
+    padding: 1.5em 0;
     a{
         font-family: $theme-font, sans-serif;
-        font-size: 5em;
+        font-size: 4em;
         font-weight: 700;
         letter-spacing: -0.08em;
     }
@@ -106,7 +131,7 @@ header{
 section{
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 1.5em;
     margin: 1em 0;
     background-color: grey;
     a:link, a:visited{
@@ -128,8 +153,68 @@ section{
     }
 }
 
+.menu-page{
+    width: 100%;
+    height: 43em;
+    margin: 1em 0 7em 0;
+    i{
+        width: 100%;
+        text-align: center;
+    }
+    h2{
+        width: 100%;
+        text-align: center;
+    }
+    .dish{
+        width: 92%;
+    }
+    .price{
+        width: 8%;
+        text-align: end;
+    }
+    @media screen and (min-width:768px){
+        width: 86%;
+        height: 50em;
+        h3{
+            font-size: 1.5em;
+        }
+        ul{
+            font-size: 0.9em;
+            padding: 1em 2em 2em 2em;
+        }
+        .dish{
+        width: 78%;
+        }
+        .price{
+            width: 5%;
+            text-align: end;
+            padding: 1em 2em 2em 0;
+        }
+    }
+    @media screen and (min-width:992px){
+        width: 80%;
+        height: 55em;
+        h3{
+            font-size: 1.7em;
+        }
+        ul{
+            font-size: 1em;
+            padding: 1em 0 2em 4em;
+        }
+        .dish{
+        width: 78%;
+        }
+        .price{
+            width: 5%;
+            text-align: end;
+            padding: 1em 2em 2em 0;
+        }
+    }
+}
+
 .menu1{
     background-color: $menu1-back;
+    color: $menu1-text;
     a:link, a:visited{
         color: $menu1-text;
     }
@@ -140,9 +225,40 @@ section{
         font-family: $font-menu1;
         font-weight: lighter;
     }
-    p{
+    h3,ul,p{
         font-family: $font-text1;
+    }
+    p{
         text-transform: uppercase;
+    }
+    #freedish{
+        width: 100%;
+    }
+    
+}
+
+.signature{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    i{
+        width: 10%;
+        text-align: right;
+        margin-right: 0.2em;
+        @media screen and (min-width:768px){
+            width:20%;
+        }
+        @media screen and (min-width:992px){
+            width:26%;
+        }
+    }
+    h2{
+        width: 45%;
+        font-size: 2em;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    @media screen and (min-width:768px){
     }
 }
 
@@ -156,10 +272,36 @@ section{
         font-weight: lighter;
         font-size: 2em;
     }
-    p{
+    h3,ul,p{
         font-family: $font-text2;
+    }
+    ul{
+        font-size: 0.8em;
+        @media screen and (min-width:768px){
+            font-size: 1em;
+        }
+        @media screen and (min-width:992px){
+            font-size: 1.2em;
+        }
+    }
+    p{
         font-weight: bold;
     }
+    #freedish{
+        width: 100%;
+    }
+}
+
+.menu2--text1{
+    color: $menu2-text1;
+}
+
+.menu2--text2{
+    color: $menu2-text2;
+}
+
+.menu2--text3{
+    color: $menu2-text3;
 }
 
 .menu3{
@@ -170,8 +312,9 @@ section{
     h2{
         font-family: $font-menu3;
         font-size: 2.8em;
+        color: $menu3-text;
     }
-    p{
+    h3,ul,p{
         font-family: $font-text1;
     }
 }
@@ -184,8 +327,9 @@ section{
     h2{
         font-family: $font-menu4;
         font-weight: lighter;
+        color: $menu4-text;
     }
-    p{
+    h3,ul,p{
         font-family: $font-text1;
     }
 }
@@ -195,6 +339,8 @@ section{
 footer{
     justify-content:space-between;
     padding: 2em 0;
+    position: fixed;
+    bottom: 0;
     a{
         font-family: $theme-font, sans-serif;
         font-size: 1.5em;

@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-body, header, main, section, .btn, footer {
+body, header, main, section, .menu-page, article, .signature, .btn, footer {
   display: flex;
   flex-wrap: wrap;
 }
@@ -46,6 +46,32 @@ main p {
   }
 }
 
+h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+  font-family: "Roboto";
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+}
+
+article {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  font-size: 0.7em;
+  padding: 1em 0 2em 0;
+}
+
+li {
+  padding-bottom: 0.5em;
+}
+
 .btn {
   width: 10em;
   height: 2em;
@@ -56,21 +82,17 @@ main p {
   background-color: #579c87;
   color: #fdcb46;
   border-radius: 0.3em;
-  margin: 1.5em 0;
-}
-
-ul {
-  list-style: none;
+  margin: 1.5em 0 5em 0;
 }
 
 /*HEADER*/
 header {
   justify-content: center;
-  padding: 2em 0;
+  padding: 1.5em 0;
 }
 header a {
   font-family: "Roboto", sans-serif;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 700;
   letter-spacing: -0.08em;
 }
@@ -79,7 +101,7 @@ header a {
 section {
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  padding: 1.5em;
   margin: 1em 0;
   background-color: grey;
 }
@@ -105,8 +127,72 @@ section a:link, section a:visited {
   }
 }
 
+.menu-page {
+  width: 100%;
+  height: 43em;
+  margin: 1em 0 7em 0;
+}
+.menu-page i {
+  width: 100%;
+  text-align: center;
+}
+.menu-page h2 {
+  width: 100%;
+  text-align: center;
+}
+.menu-page .dish {
+  width: 92%;
+}
+.menu-page .price {
+  width: 8%;
+  text-align: end;
+}
+@media screen and (min-width: 768px) {
+  .menu-page {
+    width: 86%;
+    height: 50em;
+  }
+  .menu-page h3 {
+    font-size: 1.5em;
+  }
+  .menu-page ul {
+    font-size: 0.9em;
+    padding: 1em 2em 2em 2em;
+  }
+  .menu-page .dish {
+    width: 78%;
+  }
+  .menu-page .price {
+    width: 5%;
+    text-align: end;
+    padding: 1em 2em 2em 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu-page {
+    width: 80%;
+    height: 55em;
+  }
+  .menu-page h3 {
+    font-size: 1.7em;
+  }
+  .menu-page ul {
+    font-size: 1em;
+    padding: 1em 0 2em 4em;
+  }
+  .menu-page .dish {
+    width: 78%;
+  }
+  .menu-page .price {
+    width: 5%;
+    text-align: end;
+    padding: 1em 2em 2em 0;
+  }
+}
+
 .menu1 {
   background-color: #fcdfdb;
+  color: #3c1218;
 }
 .menu1 a:link, .menu1 a:visited {
   color: #3c1218;
@@ -118,11 +204,42 @@ section a:link, section a:visited {
   font-family: "Devonshire";
   font-weight: lighter;
 }
-.menu1 p {
+.menu1 h3, .menu1 ul, .menu1 p {
   font-family: "Segoe Print";
+}
+.menu1 p {
   text-transform: uppercase;
 }
+.menu1 #freedish {
+  width: 100%;
+}
 
+.signature {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.signature i {
+  width: 10%;
+  text-align: right;
+  margin-right: 0.2em;
+}
+@media screen and (min-width: 768px) {
+  .signature i {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .signature i {
+    width: 26%;
+  }
+}
+.signature h2 {
+  width: 45%;
+  font-size: 2em;
+  text-align: left;
+  margin-bottom: 0;
+}
 .menu2 {
   background-color: #fff5fe;
 }
@@ -134,9 +251,39 @@ section a:link, section a:visited {
   font-weight: lighter;
   font-size: 2em;
 }
-.menu2 p {
+.menu2 h3, .menu2 ul, .menu2 p {
   font-family: "Cambria";
+}
+.menu2 ul {
+  font-size: 0.8em;
+}
+@media screen and (min-width: 768px) {
+  .menu2 ul {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu2 ul {
+    font-size: 1.2em;
+  }
+}
+.menu2 p {
   font-weight: bold;
+}
+.menu2 #freedish {
+  width: 100%;
+}
+
+.menu2--text1 {
+  color: #c67412;
+}
+
+.menu2--text2 {
+  color: #a56799;
+}
+
+.menu2--text3 {
+  color: #6e4ccc;
 }
 
 .menu3 {
@@ -148,8 +295,9 @@ section a:link, section a:visited {
 .menu3 h2 {
   font-family: "Dancing Script";
   font-size: 2.8em;
+  color: #0431df;
 }
-.menu3 p {
+.menu3 h3, .menu3 ul, .menu3 p {
   font-family: "Segoe Print";
 }
 
@@ -162,8 +310,9 @@ section a:link, section a:visited {
 .menu4 h2 {
   font-family: "Kaushan Script";
   font-weight: lighter;
+  color: #4c9f42;
 }
-.menu4 p {
+.menu4 h3, .menu4 ul, .menu4 p {
   font-family: "Segoe Print";
 }
 
@@ -171,6 +320,8 @@ section a:link, section a:visited {
 footer {
   justify-content: space-between;
   padding: 2em 0;
+  position: fixed;
+  bottom: 0;
 }
 footer a {
   font-family: "Roboto", sans-serif;
