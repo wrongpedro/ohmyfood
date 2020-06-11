@@ -1,0 +1,368 @@
+/*IMPORT*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Devonshire&display=swap');
+
+/*VARIABLES*/
+
+/*Theme*/
+$theme_font: 'Roboto','sans-serif';
+$theme_color:#579c87;
+$theme_font_color:#fdcb46;
+
+/*Menu Fonts*/
+$menu1_title_font: 'Devonshire', cursive;
+$menu2_title_font: 'Croissant One', cursive;
+$menu3_title_font: 'Dancing Script', cursive;
+$menu4_title_font: 'Kaushan Script', 'Arial', 'sans-serif';
+
+$menu_text_font1: 'Segoe Print','Comic Sans MS', cursive;
+$menu_text_font2: 'Cambria','Garamond', serif;
+
+
+/*Menu Colors*/
+$menu1_bg_color:#fcdfdb;
+$menu1_font_color:#3c1218;
+$menu1_icon_color:#f05160;
+
+$menu2_bg_color:#fff5fe;
+$menu2_title_color:#c77412;
+$menu2_entree_color:#c67412;
+$menu2_dish_color:#a56799;
+$menu2_dessert_color:#6e4ccc;
+
+$menu3_bg_color:#f9f9f9;
+$menu3_title_color:#0431df;
+
+$menu4_bg_color:#fdfffd;
+$menu4_title_color:#4c9f42;
+
+
+/*Font Sizes*/
+
+$font-sizes: (
+    p: 1em,
+    logo: 4em,
+    menu-word: 2em,
+    btn: 2em,
+    footer: 1.5em,
+);
+
+
+
+/*GENERAL*/
+
+*{
+    margin: 0;
+}
+
+body,header,main,article, section,ul,li,.menu__footer,nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header,footer{
+    background-color: $theme_color;
+    width: 100%;
+    color: $theme_font_color;
+}
+
+body{
+    justify-content: center;
+}
+
+main{
+    justify-content: center;
+    width: 500px;
+    h2{
+        margin-bottom: 0.7em;
+    }
+    @media screen and (min-width:768px){
+        justify-content: space-around;
+        width: 768px; 
+    }
+    @media screen and (min-width:992px){
+        justify-content: space-around;
+        width: 992px;
+        padding: 0 5em;
+    } 
+}
+
+article{
+    width: 100%;
+    align-content: flex-start;
+    section{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+h2, h3{
+    width: 100%;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    width: 100%;
+}
+
+li{
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+button{
+    width: 10em;
+    height: 2em;
+    font-family: $theme_font;
+    font-size: 2em;
+    background-color: $theme_color;
+    color: $theme_font_color;
+    border-radius: 0.3em;
+    margin: 1em 0 4em 0;
+    border-style: none;
+}
+
+/*HEADER*/
+
+header{
+    justify-content: center;
+    padding: 1.5em 0; 
+}
+
+.header__logo{
+    font-family: $theme_font;
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: -0.08em;
+    cursor: pointer;
+}
+
+/*MAIN LAYOUT*/
+
+.menu__home{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+    height: 22em;
+    padding: 2em 0;
+    margin: 2em 0 0 0;
+    box-shadow: 0 0 10px 3px #D8D8D8;
+    cursor: pointer;
+    @media screen and (min-width:768px){
+        width: 45%;
+        height: 25em;
+    }
+    @media screen and (min-width:992px){
+        width: 40%;
+        height: 30em;
+        margin: 4em 0 0 0;
+    }
+}
+
+.menu__word{
+    font-size: 2.3em;
+}
+
+/*Menu Pages*/
+
+.main__heading{
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    font-family: $theme_font;
+}
+
+.menu{
+    width: 85%;
+    height: 62em;
+    margin: 1em 0 7em 0;
+    padding: 2em;
+    box-shadow: 0 0 10px 3px #D8D8D8;
+    i{
+        width: 100%;
+        text-align: center;
+    }
+    .menu__heading{
+        width: 100%;
+        font-size: 2.5em;
+        text-align: center;
+    }
+    h3{
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+    ul{
+        font-size: 0.8em;
+        padding: 0.5em 0 1em 0;
+    }
+    p{
+        margin-bottom: 0.4em;
+    }
+    li{
+        display: block;
+        text-align: center;
+    }
+    @media screen and (min-width:768px){
+        width: 86%;
+        height: 53em;
+        .menu__heading{
+            font-size: 3em;
+        }
+        h3{
+            font-size: 1.7em;
+        }
+        ul{
+            width: 90%;
+            font-size: 0.9em;
+        }
+        li{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    @media screen and (min-width:992px){
+        width: 76%;
+        height: 55em;
+        .menu__heading{
+            font-size: 4em;
+        }
+    }
+}
+
+.menu__footer{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    i{
+        width: 10%;
+        text-align: right;
+        margin-right: 0.2em;
+        @media screen and (min-width:768px){
+            width:20%;
+        }
+        @media screen and (min-width:992px){
+            width:26%;
+        }
+    }
+    div{
+        width: 45%;
+        text-align: left;
+        margin-bottom: 0;
+        
+        font-family: $menu1_title_font;
+        font-weight: lighter;
+        font-size: 1.8em;
+    }
+}
+
+
+/*Menu Details*/
+
+.menu1{
+    background-color: $menu1_bg_color;
+    color: $menu1_font_color;
+    i{
+        color: $menu1_icon_color;
+    }
+    h2{
+        font-family: $menu1_title_font;
+        font-weight: lighter;
+        font-size: 2.3em;
+    }
+    h3,p{
+        font-family: $menu_text_font1;
+    }
+    .menu__word{
+        text-transform: uppercase;
+        font-family: $menu_text_font1;
+        color: $menu1_font_color;
+    }
+}
+
+.menu2{
+    background-color: $menu2_bg_color;
+    .menu__heading{
+        font-size: 1.8em;
+    }
+    h2{
+        font-family: $menu2_title_font;
+        font-weight: lighter;
+        font-size: 1.5em;
+        color: $menu2_title_color;
+    }
+    h3,p{
+        font-family: $menu_text_font2;
+    }
+    .menu__word{
+        font-weight: bold;
+        font-family: $menu_text_font2;
+        color: $menu2_title_color;
+    }
+    @media screen and (min-width:768px){
+        .menu__heading{
+            font-size: 2.5em;
+        }
+    }
+    @media screen and (min-width:992px){
+        .menu__heading{
+            font-size: 3em;
+        }
+    }
+}
+
+.menu3{
+    background-color: $menu3_bg_color;
+    h2{
+        font-family: $menu3_title_font;
+        font-size: 2.2em;
+        color: $menu3_title_color;
+    }
+    h3,p{
+        font-family: $menu_text_font1;
+    }
+    .menu__word{
+        font-family: $menu_text_font1;
+        color: $menu3_title_color;
+    }
+}
+
+.menu4{
+    background-color: $menu4_bg_color;
+    h2{
+        font-family: $menu4_title_font;
+        font-weight: lighter;
+        font-size: 2.2em;
+        color: $menu4_title_color;
+    }
+    h3,p{
+        font-family: $menu_text_font1;
+    }
+    .menu__word{
+        font-family: $menu_text_font1;
+        color: $menu4_title_color;
+    }
+}
+
+/*FOOTER*/
+
+footer{
+    padding: 2em 0;
+    position: fixed;
+    bottom: 0;
+}
+    
+nav{
+    justify-content:space-between;
+    font-family: $theme_font;
+    font-size: 1.5em;
+    margin: 0 2em;
+    a:link, a:visited{
+        text-decoration: none;
+        color: $theme_font_color;
+    }
+}
