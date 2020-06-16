@@ -316,20 +316,32 @@ header {
 
 /*FOOTER*/
 footer {
-  padding: 2em 0;
+  padding: 1em 0;
   position: fixed;
   bottom: 0;
 }
 
 nav {
-  justify-content: space-between;
   font-family: "Roboto", "sans-serif";
   font-size: 1.5em;
-  margin: 0 2em;
+  width: 100%;
+}
+nav a {
+  width: 100%;
+  margin: 0.2em;
+  text-align: center;
 }
 nav a:link, nav a:visited {
   text-decoration: none;
   color: #fdcb46;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+  nav a {
+    width: 25%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
