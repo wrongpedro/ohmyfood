@@ -67,13 +67,20 @@ $menu4_title_color2:#beff7f;
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+@keyframes dots{
+    50%{
+        opacity: 0;
+        transform: scale(0.7)
+    }
+}
+
 /*GENERAL*/
 
 *{
     margin: 0;
 }
 
-body,header,main,article, section,ul,li,.menu__footer,.menu__home--zoom,nav{
+body,header,main,article, section,ul,li,.menu__footer,.menu__home--zoom,.loading,nav{
     display: flex;
     flex-wrap: wrap;
 }
@@ -126,6 +133,13 @@ li{
     padding-bottom: 0.5em;
 }
 
+.soon{
+    margin-top: -2em;
+    @media screen and (min-width:768px){
+        margin-top: 0;
+    }
+}
+
 button{
     width: 10em;
     height: 2em;
@@ -134,8 +148,42 @@ button{
     background-color: $theme_color;
     color: $theme_font_color;
     border-radius: 0.3em;
-    margin: 1em 0 4em 0;
+    margin-bottom: 4em;
     border-style: none;
+}
+
+.loading{
+    width: 10em;
+    height: 2em;
+    font-size: 2em;
+    background-color: $theme_color;
+    border-radius: 0.3em;
+    position: relative;
+    top: 2em;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    span{
+        width: 10px;
+        height: 10px;
+        margin: 0 10px;
+        background-color: $theme_font_color;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    &:hover{
+        opacity: 1;
+        transition: opacity 400ms ease-in-out;
+        span{
+            animation: dots 2s infinite ease-in-out;
+            &:nth-child(2){
+            animation-delay: 0.4s;
+            }
+            &:nth-child(3){
+            animation-delay: 0.8s;
+            }
+        }
+    }
 }
 
 /*HEADER*/
@@ -208,15 +256,41 @@ header{
     margin: 1em 0 8em 0;
     padding: 2em;
     box-shadow: 0 0 10px 3px #D8D8D8;
-    .menu__heading{
+    &__heading{
         width: 100%;
         font-size: 2.8em;
         text-align: center;
         margin: 1em 0; 
     }
-    h3{
+    &__section{
         font-size: 1.2em;
         margin-bottom: 1em;
+        &--underline {
+            position: relative;
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                width: 0px;
+                height: 2px;
+                margin: 5px 0 0;
+                transition: all 0.2s ease-in-out;
+                transition-duration: 0.75s;
+                left: 0;
+                opacity: 0;
+                background-color: $theme_font_color;   
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            .menu__section--underline {
+                &:before,
+                &:after {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
     }
     ul{
         font-size: 0.9em;
@@ -269,7 +343,6 @@ header{
         }
     }
 }
-
 
 /*Menu Details*/
 

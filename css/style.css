@@ -45,12 +45,18 @@
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+@keyframes dots {
+  50% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
 /*GENERAL*/
 * {
   margin: 0;
 }
 
-body, header, main, article, section, ul, li, .menu__footer, .menu__home--zoom, nav {
+body, header, main, article, section, ul, li, .menu__footer, .menu__home--zoom, .loading, nav {
   display: flex;
   flex-wrap: wrap;
 }
@@ -107,6 +113,15 @@ li {
   padding-bottom: 0.5em;
 }
 
+.soon {
+  margin-top: -2em;
+}
+@media screen and (min-width: 768px) {
+  .soon {
+    margin-top: 0;
+  }
+}
+
 button {
   width: 10em;
   height: 2em;
@@ -115,8 +130,42 @@ button {
   background-color: #579c87;
   color: #fdcb46;
   border-radius: 0.3em;
-  margin: 1em 0 4em 0;
+  margin-bottom: 4em;
   border-style: none;
+}
+
+.loading {
+  width: 10em;
+  height: 2em;
+  font-size: 2em;
+  background-color: #579c87;
+  border-radius: 0.3em;
+  position: relative;
+  top: 2em;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.loading span {
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  background-color: #fdcb46;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading:hover {
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+.loading:hover span {
+  animation: dots 2s infinite ease-in-out;
+}
+.loading:hover span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.loading:hover span:nth-child(3) {
+  animation-delay: 0.8s;
 }
 
 /*HEADER*/
@@ -191,15 +240,38 @@ header {
   padding: 2em;
   box-shadow: 0 0 10px 3px #D8D8D8;
 }
-.menu .menu__heading {
+.menu__heading {
   width: 100%;
   font-size: 2.8em;
   text-align: center;
   margin: 1em 0;
 }
-.menu h3 {
+.menu__section {
   font-size: 1.2em;
   margin-bottom: 1em;
+}
+.menu__section--underline {
+  position: relative;
+}
+.menu__section--underline:before, .menu__section--underline:after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 0px;
+  height: 2px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.75s;
+  left: 0;
+  opacity: 0;
+  background-color: #fdcb46;
+}
+.menu__section:hover {
+  cursor: pointer;
+}
+.menu__section:hover .menu__section--underline:before, .menu__section:hover .menu__section--underline:after {
+  width: 100%;
+  opacity: 1;
 }
 .menu ul {
   font-size: 0.9em;
