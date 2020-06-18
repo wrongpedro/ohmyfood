@@ -118,7 +118,7 @@ article{
     }
 }
 
-h2, h3{
+h2{
     width: 100%;
     text-align: center;
 }
@@ -262,9 +262,18 @@ header{
         text-align: center;
         margin: 1em 0; 
     }
+    &__path{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1.6em;
+        &__img{
+            width: 32%;
+        }
+    }
     &__section{
         font-size: 1.2em;
-        margin-bottom: 1em;
+        text-align: center;
         &--underline {
             position: relative;
             &:before, &:after {
@@ -294,7 +303,7 @@ header{
     }
     ul{
         font-size: 0.9em;
-        padding: 0.5em 0 2.5em 0;
+        padding: 0.5em 0 2.8em 0;
     }
     p{
         margin-bottom: 0.4em;
@@ -305,7 +314,7 @@ header{
     }
     @media screen and (min-width:768px){
         width: 80%;
-        padding: 0 4em 8em 4em;
+        padding: 0 4em 5em 4em;
         .menu__heading{
             font-size: 4.4em;
         }
