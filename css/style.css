@@ -56,7 +56,7 @@
   margin: 0;
 }
 
-body, header, main, article, section, ul, li, .menu__footer, .menu__home--zoom, .loading, nav {
+body, header, main, article, section, ul, li, .menu, .menu__footer, .menu__home--zoom, .loading, nav {
   display: flex;
   flex-wrap: wrap;
 }
@@ -239,6 +239,7 @@ header {
   margin: 1em 0 8em 0;
   padding: 2em;
   box-shadow: 0 0 10px 3px #D8D8D8;
+  justify-content: center;
 }
 .menu__heading {
   width: 100%;
@@ -253,10 +254,15 @@ header {
   margin-bottom: 1.6em;
 }
 .menu__path__img {
-  width: 32%;
+  width: 15%;
+}
+@media screen and (min-width: 768px) {
+  .menu__path__img {
+    width: 30%;
+  }
 }
 .menu__section {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
 }
 .menu__section--underline {
@@ -284,7 +290,7 @@ header {
 }
 .menu ul {
   font-size: 0.9em;
-  padding: 0.5em 0 2.8em 0;
+  padding: 0.6em 0 3em 0;
 }
 .menu p {
   margin-bottom: 0.4em;
@@ -311,10 +317,13 @@ header {
 }
 @media screen and (min-width: 992px) {
   .menu {
-    width: 73%;
+    width: 80%;
   }
   .menu .menu__heading {
     font-size: 4.4em;
+  }
+  .menu ul {
+    width: 84%;
   }
 }
 
@@ -326,7 +335,7 @@ header {
   font-weight: lighter;
   font-size: 2em;
 }
-.menu__footer i {
+.menu__footer .fas {
   margin-right: 0.2em;
   font-size: 1.3em;
 }
@@ -334,7 +343,7 @@ header {
   .menu__footer {
     font-size: 2.5em;
   }
-  .menu__footer i {
+  .menu__footer .fas {
     font-size: 1.2em;
   }
 }
@@ -344,20 +353,20 @@ header {
   background-color: #fcdfdb;
   color: #3c1218;
 }
-.menu1 i {
-  color: #f05160;
+.menu1 .fas {
+  background: linear-gradient(90deg, #f05160, #f6916a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.menu1 #fas__top {
+  font-size: 5em;
+  margin-top: 0.5em;
 }
 .menu1 h2 {
   font-family: "Devonshire", cursive;
   font-weight: lighter;
   font-size: 2.3em;
-}
-.menu1 h2 i {
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  position: relative;
-  top: 0.3em;
 }
 .menu1 h3, .menu1 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
@@ -368,12 +377,15 @@ header {
   color: #3c1218;
 }
 .menu1 .menu__heading {
-  margin: 0.5em;
+  margin: 0 0 0.5em 0;
   font-size: 2.8em;
 }
 @media screen and (min-width: 768px) {
   .menu1 .menu__heading {
     font-size: 3.5em;
+  }
+  .menu1 ul {
+    width: 100%;
   }
 }
 
@@ -411,7 +423,7 @@ header {
 }
 @media screen and (min-width: 768px) {
   .menu2 .menu__heading {
-    font-size: 2.5em;
+    font-size: 2.3em;
     margin: 2.2em 0;
   }
   .menu2 ul {
@@ -420,7 +432,7 @@ header {
 }
 @media screen and (min-width: 992px) {
   .menu2 .menu__heading {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 

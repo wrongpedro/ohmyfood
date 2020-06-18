@@ -25,7 +25,8 @@ $menu_text_font2: 'Cambria','Garamond', serif;
 /*Menu Colors*/
 $menu1_bg_color:#fcdfdb;
 $menu1_font_color:#3c1218;
-$menu1_icon_color:#f05160;
+$menu1_icon_color1:#f05160;
+$menu1_icon_color2:#f6916a;
 
 $menu2_bg_color:#fff5fe;
 $menu2_title_color:#c77412;
@@ -80,7 +81,7 @@ $menu4_title_color2:#beff7f;
     margin: 0;
 }
 
-body,header,main,article, section,ul,li,.menu__footer,.menu__home--zoom,.loading,nav{
+body,header,main,article, section,ul,li,.menu,.menu__footer,.menu__home--zoom,.loading,nav{
     display: flex;
     flex-wrap: wrap;
 }
@@ -256,6 +257,7 @@ header{
     margin: 1em 0 8em 0;
     padding: 2em;
     box-shadow: 0 0 10px 3px #D8D8D8;
+    justify-content: center;
     &__heading{
         width: 100%;
         font-size: 2.8em;
@@ -268,11 +270,14 @@ header{
         width: 100%;
         margin-bottom: 1.6em;
         &__img{
-            width: 32%;
+            width: 15%;
+            @media screen and (min-width:768px){
+                width: 30%;
+            }
         }
     }
     &__section{
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-align: center;
         &--underline {
             position: relative;
@@ -303,7 +308,7 @@ header{
     }
     ul{
         font-size: 0.9em;
-        padding: 0.5em 0 2.8em 0;
+        padding: 0.6em 0 3em 0;
     }
     p{
         margin-bottom: 0.4em;
@@ -327,9 +332,12 @@ header{
         }
     }
     @media screen and (min-width:992px){
-        width: 73%;
+        width: 80%;
         .menu__heading{
             font-size: 4.4em;
+        }
+        ul{
+            width: 84%;
         }
     }
 }
@@ -341,13 +349,13 @@ header{
     font-family: $menu1_title_font;
     font-weight: lighter;
     font-size: 2em;
-        i{
+        .fas{
             margin-right: 0.2em;
             font-size: 1.3em;
         }
     @media screen and (min-width:768px){
         font-size: 2.5em;
-        i{
+        .fas{
             font-size: 1.2em;
         }
     }
@@ -358,20 +366,17 @@ header{
 .menu1{
     background-color: $menu1_bg_color;
     color: $menu1_font_color;
-    i{
-        color: $menu1_icon_color;
+    .fas{
+        @include gradient(90deg, $menu1_icon_color1, $menu1_icon_color2);
+    }
+    #fas__top{
+        font-size: 5em;
+        margin-top: 0.5em;
     }
     h2{
         font-family: $menu1_title_font;
         font-weight: lighter;
-        font-size: 2.3em;
-        i{
-        width: 100%;
-        text-align: center;
-        font-size: 1.2em;
-        position: relative;
-        top: 0.3em;
-        }     
+        font-size: 2.3em;   
     }
     h3,p{
         font-family: $menu_text_font1;
@@ -382,13 +387,16 @@ header{
         color: $menu1_font_color;
     }
     .menu__heading{
-        margin: 0.5em;
+        margin: 0 0 0.5em 0;
         font-size: 2.8em;
     }
     @media screen and (min-width:768px){
         .menu__heading{
         font-size: 3.5em;
-        }   
+        }
+        ul{
+            width: 100%;
+        }
     }
 }
 
@@ -422,7 +430,7 @@ header{
     }
     @media screen and (min-width:768px){
         .menu__heading{
-            font-size: 2.5em;
+            font-size: 2.3em;
             margin: 2.2em 0;
         }
         ul{
@@ -431,7 +439,7 @@ header{
     }
     @media screen and (min-width:992px){
         .menu__heading{
-            font-size: 3em;
+            font-size: 2.5em;
         }
     }
 }
