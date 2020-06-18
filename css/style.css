@@ -8,13 +8,55 @@
 /*Theme*/
 /*Menu Fonts*/
 /*Menu Colors*/
-/*Font Sizes*/
+/*MIXIN*/
+/*KEYFRAME*/
+@keyframes wiggle {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes dots {
+  50% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
 /*GENERAL*/
 * {
   margin: 0;
 }
 
-body, header, main, article, section, ul, li, .menu__footer, nav {
+body, header, main, article, section, ul, li, .menu__footer, .menu__home--zoom, .loading, nav {
   display: flex;
   flex-wrap: wrap;
 }
@@ -32,9 +74,6 @@ body {
 main {
   justify-content: center;
   width: 500px;
-}
-main h2 {
-  margin-bottom: 0.7em;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -59,7 +98,7 @@ article section {
   justify-content: center;
 }
 
-h2, h3 {
+h2 {
   width: 100%;
   text-align: center;
 }
@@ -74,6 +113,15 @@ li {
   padding-bottom: 0.5em;
 }
 
+.soon {
+  margin-top: -2em;
+}
+@media screen and (min-width: 768px) {
+  .soon {
+    margin-top: 0;
+  }
+}
+
 button {
   width: 10em;
   height: 2em;
@@ -82,8 +130,42 @@ button {
   background-color: #579c87;
   color: #fdcb46;
   border-radius: 0.3em;
-  margin: 1em 0 4em 0;
+  margin-bottom: 4em;
   border-style: none;
+}
+
+.loading {
+  width: 10em;
+  height: 2em;
+  font-size: 2em;
+  background-color: #579c87;
+  border-radius: 0.3em;
+  position: relative;
+  top: 2em;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.loading span {
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  background-color: #fdcb46;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading:hover {
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+.loading:hover span {
+  animation: dots 2s infinite ease-in-out;
+}
+.loading:hover span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.loading:hover span:nth-child(3) {
+  animation-delay: 0.8s;
 }
 
 /*HEADER*/
@@ -102,15 +184,27 @@ header {
 
 /*MAIN LAYOUT*/
 .menu__home {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   width: 80%;
   height: 22em;
   padding: 2em 0;
   margin: 2em 0 0 0;
   box-shadow: 0 0 10px 3px #D8D8D8;
   cursor: pointer;
+  justify-content: center;
+}
+.menu__home--zoom {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+.menu__home--zoom:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+.menu__home h2 {
+  margin-bottom: 0.2em;
 }
 @media screen and (min-width: 768px) {
   .menu__home {
@@ -127,40 +221,70 @@ header {
 }
 
 .menu__word {
-  font-size: 2.3em;
+  font-size: 2.2em;
 }
 
 /*Menu Pages*/
 .main__heading {
   width: 100%;
   text-align: center;
-  margin-top: 1em;
+  margin: 1em 0 0.2em 0;
   font-family: "Roboto", "sans-serif";
+  font-size: 2.2em;
 }
 
 .menu {
-  width: 85%;
-  height: 62em;
-  margin: 1em 0 7em 0;
+  width: 80%;
+  height: auto;
+  margin: 1em 0 8em 0;
   padding: 2em;
   box-shadow: 0 0 10px 3px #D8D8D8;
 }
-.menu i {
+.menu__heading {
   width: 100%;
+  font-size: 2.8em;
+  text-align: center;
+  margin: 1em 0;
+}
+.menu__path {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.6em;
+}
+.menu__path__img {
+  width: 32%;
+}
+.menu__section {
+  font-size: 1.2em;
   text-align: center;
 }
-.menu .menu__heading {
-  width: 100%;
-  font-size: 2.5em;
-  text-align: center;
+.menu__section--underline {
+  position: relative;
 }
-.menu h3 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
+.menu__section--underline:before, .menu__section--underline:after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 0px;
+  height: 2px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.75s;
+  left: 0;
+  opacity: 0;
+  background-color: #fdcb46;
+}
+.menu__section:hover {
+  cursor: pointer;
+}
+.menu__section:hover .menu__section--underline:before, .menu__section:hover .menu__section--underline:after {
+  width: 100%;
+  opacity: 1;
 }
 .menu ul {
-  font-size: 0.8em;
-  padding: 0.5em 0 1em 0;
+  font-size: 0.9em;
+  padding: 0.5em 0 2.8em 0;
 }
 .menu p {
   margin-bottom: 0.4em;
@@ -171,18 +295,14 @@ header {
 }
 @media screen and (min-width: 768px) {
   .menu {
-    width: 86%;
-    height: 53em;
+    width: 80%;
+    padding: 0 4em 5em 4em;
   }
   .menu .menu__heading {
-    font-size: 3em;
-  }
-  .menu h3 {
-    font-size: 1.7em;
+    font-size: 4.4em;
   }
   .menu ul {
-    width: 90%;
-    font-size: 0.9em;
+    width: 92%;
   }
   .menu li {
     display: flex;
@@ -191,11 +311,10 @@ header {
 }
 @media screen and (min-width: 992px) {
   .menu {
-    width: 76%;
-    height: 55em;
+    width: 73%;
   }
   .menu .menu__heading {
-    font-size: 4em;
+    font-size: 4.4em;
   }
 }
 
@@ -203,29 +322,21 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-.menu__footer i {
-  width: 10%;
-  text-align: right;
-  margin-right: 0.2em;
-}
-@media screen and (min-width: 768px) {
-  .menu__footer i {
-    width: 20%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .menu__footer i {
-    width: 26%;
-  }
-}
-.menu__footer div {
-  width: 45%;
-  text-align: left;
-  margin-bottom: 0;
   font-family: "Devonshire", cursive;
   font-weight: lighter;
-  font-size: 1.8em;
+  font-size: 2em;
+}
+.menu__footer i {
+  margin-right: 0.2em;
+  font-size: 1.3em;
+}
+@media screen and (min-width: 768px) {
+  .menu__footer {
+    font-size: 2.5em;
+  }
+  .menu__footer i {
+    font-size: 1.2em;
+  }
 }
 
 /*Menu Details*/
@@ -241,6 +352,13 @@ header {
   font-weight: lighter;
   font-size: 2.3em;
 }
+.menu1 h2 i {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+  top: 0.3em;
+}
 .menu1 h3, .menu1 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
@@ -248,6 +366,15 @@ header {
   text-transform: uppercase;
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #3c1218;
+}
+.menu1 .menu__heading {
+  margin: 0.5em;
+  font-size: 2.8em;
+}
+@media screen and (min-width: 768px) {
+  .menu1 .menu__heading {
+    font-size: 3.5em;
+  }
 }
 
 .menu2 {
@@ -260,7 +387,10 @@ header {
   font-family: "Croissant One", cursive;
   font-weight: lighter;
   font-size: 1.5em;
-  color: #c77412;
+  background: linear-gradient(45deg, #c77412, #6e4ccc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .menu2 h3, .menu2 p {
   font-family: "Cambria", "Garamond", serif;
@@ -270,9 +400,22 @@ header {
   font-family: "Cambria", "Garamond", serif;
   color: #c77412;
 }
+.menu2__entree {
+  color: #c67412;
+}
+.menu2__dish {
+  color: #a56799;
+}
+.menu2__dessert {
+  color: #6e4ccc;
+}
 @media screen and (min-width: 768px) {
   .menu2 .menu__heading {
     font-size: 2.5em;
+    margin: 2.2em 0;
+  }
+  .menu2 ul {
+    font-size: 1em;
   }
 }
 @media screen and (min-width: 992px) {
@@ -287,14 +430,17 @@ header {
 .menu3 h2 {
   font-family: "Dancing Script", cursive;
   font-size: 2.2em;
-  color: #0431df;
+  background: linear-gradient(45deg, #0431df, #0887fb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .menu3 h3, .menu3 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
 .menu3 .menu__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
-  color: #0431df;
+  color: #0887fb;
 }
 
 .menu4 {
@@ -304,7 +450,10 @@ header {
   font-family: "Kaushan Script", "Arial", "sans-serif";
   font-weight: lighter;
   font-size: 2.2em;
-  color: #4c9f42;
+  background: linear-gradient(100deg, #4c9f42, #beff7f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .menu4 h3, .menu4 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
@@ -316,20 +465,35 @@ header {
 
 /*FOOTER*/
 footer {
-  padding: 2em 0;
+  padding: 1em 0;
   position: fixed;
   bottom: 0;
 }
 
 nav {
-  justify-content: space-between;
   font-family: "Roboto", "sans-serif";
   font-size: 1.5em;
-  margin: 0 2em;
+  width: 100%;
+}
+nav a {
+  width: 100%;
+  margin: 0.2em;
+  text-align: center;
+}
+nav a:hover {
+  animation: wiggle 1.5s infinite;
 }
 nav a:link, nav a:visited {
   text-decoration: none;
   color: #fdcb46;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+  nav a {
+    width: 25%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
