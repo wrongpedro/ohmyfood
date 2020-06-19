@@ -59,14 +59,14 @@
 body,
 .header,
 .container,
-article,
 section,
 ul,
 li,
 .menu,
 .menu__home--zoom,
 .menu1__footer,
-.loading, .nav {
+.loading,
+.nav {
   display: flex;
   flex-wrap: wrap;
 }
@@ -79,48 +79,6 @@ li,
 
 body {
   justify-content: center;
-}
-
-.container {
-  justify-content: center;
-  width: 500px;
-}
-@media screen and (min-width: 768px) {
-  .container {
-    justify-content: space-around;
-    width: 768px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .container {
-    justify-content: space-around;
-    width: 992px;
-    padding: 0 5em;
-  }
-}
-
-article {
-  width: 100%;
-  align-content: flex-start;
-}
-article section {
-  width: 100%;
-  justify-content: center;
-}
-
-h2 {
-  width: 100%;
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-  width: 100%;
-}
-
-li {
-  width: 100%;
-  padding-bottom: 0.5em;
 }
 
 .soon {
@@ -191,6 +149,32 @@ button {
   cursor: pointer;
 }
 
+/*MAIN*/
+.container {
+  justify-content: center;
+  width: 500px;
+}
+.container__heading {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0 0.2em 0;
+  font-family: "Roboto", "sans-serif";
+  font-size: 2.2em;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    justify-content: space-around;
+    width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    justify-content: space-around;
+    width: 992px;
+    padding: 0 5em;
+  }
+}
+
 /*Homepage Layout*/
 .menu__home {
   width: 80%;
@@ -213,6 +197,8 @@ button {
   transform: scale(1.2);
 }
 .menu__home__title {
+  width: 100%;
+  text-align: center;
   margin-bottom: 0.2em;
 }
 .menu__home__word {
@@ -233,14 +219,6 @@ button {
 }
 
 /*Menu Pages Layout*/
-.main__heading {
-  width: 100%;
-  text-align: center;
-  margin: 1em 0 0.2em 0;
-  font-family: "Roboto", "sans-serif";
-  font-size: 2.2em;
-}
-
 .menu {
   width: 80%;
   height: auto;
@@ -269,14 +247,17 @@ button {
     width: 30%;
   }
 }
-.menu__section {
-  font-size: 1.4em;
+.menu__service {
+  font-size: 1.2em;
   text-align: center;
 }
-.menu__section--underline {
+.menu__service__price {
+  font-weight: bold;
+}
+.menu__service--underline {
   position: relative;
 }
-.menu__section--underline:before, .menu__section--underline:after {
+.menu__service--underline:before, .menu__service--underline:after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -289,21 +270,27 @@ button {
   opacity: 0;
   background-color: #fdcb46;
 }
-.menu__section:hover {
+.menu__service:hover {
   cursor: pointer;
 }
-.menu__section:hover .menu__section--underline:before, .menu__section:hover .menu__section--underline:after {
+.menu__service:hover .menu__service--underline:before, .menu__service:hover .menu__service--underline:after {
   width: 100%;
   opacity: 1;
+}
+.menu section {
+  justify-content: center;
 }
 .menu ul {
   font-size: 0.9em;
   padding: 0.6em 0 3em 0;
+  list-style: none;
 }
 .menu p {
   margin-bottom: 0.4em;
 }
 .menu li {
+  width: 100%;
+  padding-bottom: 0.5em;
   display: block;
   text-align: center;
 }
@@ -311,6 +298,9 @@ button {
   .menu {
     width: 80%;
     padding: 0 4em 5em 4em;
+  }
+  .menu__service {
+    font-size: 1.4em;
   }
   .menu .menu__heading {
     font-size: 4.4em;
@@ -328,7 +318,7 @@ button {
     width: 80%;
   }
   .menu .menu__heading {
-    font-size: 4.4em;
+    font-size: 4.8em;
   }
   .menu ul {
     width: 84%;
@@ -345,10 +335,6 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-}
-.menu1 #fas__top {
-  font-size: 5em;
-  margin-top: 0.5em;
 }
 .menu1 h2 {
   font-family: "Devonshire", cursive;
@@ -387,7 +373,16 @@ button {
     font-size: 1.2em;
   }
 }
+@media screen and (max-width: 450px) {
+  .menu1 h2 {
+    font-size: 2em;
+  }
+}
 @media screen and (min-width: 768px) {
+  .menu1 #fas__top {
+    font-size: 5em;
+    margin-top: 0.5em;
+  }
   .menu1 .menu__heading {
     font-size: 3.5em;
   }
@@ -428,6 +423,11 @@ button {
 .menu2__dessert {
   color: #6e4ccc;
 }
+@media screen and (max-width: 450px) {
+  .menu2 h2 {
+    font-size: 1.2em;
+  }
+}
 @media screen and (min-width: 768px) {
   .menu2 .menu__heading {
     font-size: 2.3em;
@@ -461,6 +461,11 @@ button {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #0887fb;
 }
+@media screen and (max-width: 450px) {
+  .menu3 h2 {
+    font-size: 1.9em;
+  }
+}
 
 .menu4 {
   background-color: #fdfffd;
@@ -480,6 +485,11 @@ button {
 .menu4 .menu__home__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #4c9f42;
+}
+@media screen and (max-width: 450px) {
+  .menu4 h2 {
+    font-size: 1.9em;
+  }
 }
 
 /*FOOTER*/
