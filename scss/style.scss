@@ -202,7 +202,7 @@ header{
     cursor: pointer;
 }
 
-/*MAIN LAYOUT*/
+/*Homepage Layout*/
 
 .menu__home{
     width: 80%;
@@ -223,8 +223,11 @@ header{
             transform: scale(1.20);
         }
     }
-    h2{
+    &__title{
         margin-bottom: 0.2em;
+    }
+    &__word{
+        font-size: 2.2em;
     }
     @media screen and (min-width:768px){
         width: 45%;
@@ -237,11 +240,7 @@ header{
     }
 }
 
-.menu__word{
-    font-size: 2.2em;
-}
-
-/*Menu Pages*/
+/*Menu Pages Layout*/
 
 .main__heading{
     width: 100%;
@@ -381,7 +380,7 @@ header{
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__word{
+    .menu__home__word{
         text-transform: uppercase;
         font-family: $menu_text_font1;
         color: $menu1_font_color;
@@ -414,7 +413,7 @@ header{
     h3,p{
         font-family: $menu_text_font2;
     }
-    .menu__word{
+    .menu__home__word{
         font-weight: bold;
         font-family: $menu_text_font2;
         color: $menu2_title_color;
@@ -454,7 +453,7 @@ header{
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__word{
+    .menu__home__word{
         font-family: $menu_text_font1;
         color: $menu3_title_color2;
     }
@@ -471,7 +470,7 @@ header{
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__word{
+    .menu__home__word{
         font-family: $menu_text_font1;
         color: $menu4_title_color1;
     }

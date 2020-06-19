@@ -182,7 +182,7 @@ header {
   cursor: pointer;
 }
 
-/*MAIN LAYOUT*/
+/*Homepage Layout*/
 .menu__home {
   width: 80%;
   height: 22em;
@@ -203,8 +203,11 @@ header {
   opacity: 0.8;
   transform: scale(1.2);
 }
-.menu__home h2 {
+.menu__home__title {
   margin-bottom: 0.2em;
+}
+.menu__home__word {
+  font-size: 2.2em;
 }
 @media screen and (min-width: 768px) {
   .menu__home {
@@ -220,11 +223,7 @@ header {
   }
 }
 
-.menu__word {
-  font-size: 2.2em;
-}
-
-/*Menu Pages*/
+/*Menu Pages Layout*/
 .main__heading {
   width: 100%;
   text-align: center;
@@ -371,7 +370,7 @@ header {
 .menu1 h3, .menu1 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu1 .menu__word {
+.menu1 .menu__home__word {
   text-transform: uppercase;
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #3c1218;
@@ -407,7 +406,7 @@ header {
 .menu2 h3, .menu2 p {
   font-family: "Cambria", "Garamond", serif;
 }
-.menu2 .menu__word {
+.menu2 .menu__home__word {
   font-weight: bold;
   font-family: "Cambria", "Garamond", serif;
   color: #c77412;
@@ -450,7 +449,7 @@ header {
 .menu3 h3, .menu3 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu3 .menu__word {
+.menu3 .menu__home__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #0887fb;
 }
@@ -470,7 +469,7 @@ header {
 .menu4 h3, .menu4 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu4 .menu__word {
+.menu4 .menu__home__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #4c9f42;
 }
