@@ -59,13 +59,10 @@
 body,
 .header,
 .container,
-section,
-ul,
-li,
 .menu,
-.menu__home--zoom,
+.menu_home,
+.menu_home--zoom,
 .menu1__footer,
-.loading,
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -75,6 +72,7 @@ li,
   width: 100%;
   background-color: #579c87;
   color: #fdcb46;
+  font-family: "Roboto", "sans-serif";
 }
 
 body {
@@ -87,7 +85,6 @@ body {
   padding: 1.5em 0;
 }
 .header__logo {
-  font-family: "Roboto", "sans-serif";
   font-size: 4em;
   font-weight: 700;
   letter-spacing: -0.08em;
@@ -121,7 +118,7 @@ body {
 }
 
 /*Homepage Layout*/
-.menu__home {
+.menu_home {
   width: 90%;
   height: 22em;
   padding: 2em 0;
@@ -130,45 +127,46 @@ body {
   cursor: pointer;
   justify-content: center;
 }
-.menu__home--zoom {
+.menu_home--zoom {
   justify-content: center;
   align-items: center;
   align-content: center;
   transform: scale(1);
   transition: transform 300ms ease-in-out;
 }
-.menu__home--zoom:hover {
+.menu_home--zoom:hover {
   opacity: 0.8;
   transform: scale(1.2);
 }
-.menu__home__title {
+.menu_home__heading {
   width: 100%;
   text-align: center;
+  font-size: 2.2em;
   margin-bottom: 0.2em;
 }
-.menu__home__word {
+.menu_home__word {
   font-size: 2.2em;
 }
 @media screen and (max-width: 450px) {
-  .menu__home__word {
+  .menu_home__word {
     font-size: 1.9em;
   }
 }
 @media screen and (min-width: 768px) {
-  .menu__home {
+  .menu_home {
     width: 45%;
     height: 25em;
   }
 }
 @media screen and (min-width: 992px) {
-  .menu__home {
+  .menu_home {
     width: 40%;
     height: 30em;
     margin: 4em 0 0 0;
   }
 }
 
-.btn__soon {
+.btn_soon {
   width: 10em;
   height: 2em;
   font-family: "Roboto", "sans-serif";
@@ -179,7 +177,7 @@ body {
   margin: 1em 0 4.5em 0;
   border-style: none;
 }
-.btn__soon span {
+.btn_soon span {
   width: 5px;
   height: 5px;
   margin: 0 3px;
@@ -188,14 +186,14 @@ body {
   display: inline-block;
   animation: dots 2s infinite ease-in-out;
 }
-.btn__soon span:nth-child(2) {
+.btn_soon span:nth-child(2) {
   animation-delay: 0.4s;
 }
-.btn__soon span:nth-child(3) {
+.btn_soon span:nth-child(3) {
   animation-delay: 0.8s;
 }
 @media screen and (min-width: 768px) {
-  .btn__soon {
+  .btn_soon {
     margin: 1.5em 0 3.5em 0;
   }
 }
@@ -260,21 +258,27 @@ body {
   opacity: 1;
 }
 .menu section {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+}
+.menu ul, .menu li {
+  display: flex;
+  flex-wrap: wrap;
 }
 .menu ul {
   font-size: 0.9em;
   padding: 0.6em 0 3em 0;
   list-style: none;
 }
-.menu p {
-  margin-bottom: 0.4em;
-}
 .menu li {
   width: 100%;
   padding-bottom: 0.5em;
   display: block;
   text-align: center;
+}
+.menu p {
+  margin-bottom: 0.4em;
 }
 @media screen and (min-width: 768px) {
   .menu {
@@ -321,12 +325,14 @@ body {
 .menu1 h2 {
   font-family: "Devonshire", cursive;
   font-weight: lighter;
-  font-size: 2.3em;
 }
 .menu1 h3, .menu1 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu1 .menu__home__word {
+.menu1 .menu_home__heading {
+  font-size: 2.3em;
+}
+.menu1 .menu_home__word {
   text-transform: uppercase;
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #3c1218;
@@ -356,7 +362,7 @@ body {
   }
 }
 @media screen and (max-width: 450px) {
-  .menu1 h2 {
+  .menu1 .menu_home__heading {
     font-size: 2em;
   }
 }
@@ -376,13 +382,9 @@ body {
 .menu2 {
   background-color: #fff5fe;
 }
-.menu2 .menu__heading {
-  font-size: 1.8em;
-}
 .menu2 h2 {
   font-family: "Croissant One", cursive;
   font-weight: lighter;
-  font-size: 1.5em;
   background: linear-gradient(45deg, #c77412, #6e4ccc);
   background-clip: text;
   -webkit-background-clip: text;
@@ -391,10 +393,16 @@ body {
 .menu2 h3, .menu2 p {
   font-family: "Cambria", "Garamond", serif;
 }
-.menu2 .menu__home__word {
+.menu2 .menu_home__heading {
+  font-size: 1.5em;
+}
+.menu2 .menu_home__word {
   font-weight: bold;
   font-family: "Cambria", "Garamond", serif;
   color: #c77412;
+}
+.menu2 .menu__heading {
+  font-size: 1.8em;
 }
 .menu2__entree {
   color: #c67412;
@@ -406,7 +414,7 @@ body {
   color: #6e4ccc;
 }
 @media screen and (max-width: 450px) {
-  .menu2 h2 {
+  .menu2 .menu_home__heading {
     font-size: 1.2em;
   }
 }
@@ -430,7 +438,6 @@ body {
 }
 .menu3 h2 {
   font-family: "Dancing Script", cursive;
-  font-size: 2.2em;
   background: linear-gradient(45deg, #0431df, #0887fb);
   background-clip: text;
   -webkit-background-clip: text;
@@ -439,12 +446,12 @@ body {
 .menu3 h3, .menu3 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu3 .menu__home__word {
+.menu3 .menu_home__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #0887fb;
 }
 @media screen and (max-width: 450px) {
-  .menu3 h2 {
+  .menu3 .menu_home__heading {
     font-size: 1.9em;
   }
 }
@@ -455,7 +462,6 @@ body {
 .menu4 h2 {
   font-family: "Kaushan Script", "Arial", "sans-serif";
   font-weight: lighter;
-  font-size: 2.2em;
   background: linear-gradient(100deg, #4c9f42, #beff7f);
   background-clip: text;
   -webkit-background-clip: text;
@@ -464,12 +470,12 @@ body {
 .menu4 h3, .menu4 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-.menu4 .menu__home__word {
+.menu4 .menu_home__word {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   color: #4c9f42;
 }
 @media screen and (max-width: 450px) {
-  .menu4 h2 {
+  .menu4 .menu_home__heading {
     font-size: 1.9em;
   }
 }
@@ -481,7 +487,6 @@ body {
   bottom: 0;
 }
 .footer .nav {
-  font-family: "Roboto", "sans-serif";
   font-size: 1.5em;
   width: 100%;
 }
@@ -489,13 +494,11 @@ body {
   width: 100%;
   margin: 0.2em;
   text-align: center;
+  text-decoration: none;
+  color: #fdcb46;
 }
 .footer .nav__link:hover {
   animation: wiggle 1.5s infinite;
-}
-.footer .nav__link:link, .footer .nav__link:visited {
-  text-decoration: none;
-  color: #fdcb46;
 }
 @media screen and (min-width: 768px) {
   .footer .nav {

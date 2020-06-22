@@ -84,13 +84,10 @@ $menu4_title_color2:#beff7f;
 body,
 .header,
 .container, 
-section,
-ul,
-li,
 .menu,
-.menu__home--zoom,
+.menu_home,
+.menu_home--zoom,
 .menu1__footer,
-.loading,
 .nav{
     display: flex;
     flex-wrap: wrap;
@@ -100,6 +97,7 @@ li,
     width: 100%;
     background-color: $theme_color;
     color: $theme_font_color;
+    font-family: $theme_font;
 }
 
 body{
@@ -112,7 +110,6 @@ body{
     justify-content: center;
     padding: 1.5em 0;
     &__logo{
-        font-family: $theme_font;
         font-size: 4em;
         font-weight: 700;
         letter-spacing: -0.08em;
@@ -145,7 +142,7 @@ body{
 
 /*Homepage Layout*/
 
-.menu__home{
+.menu_home{
     width: 90%;
     height: 22em;
     padding: 2em 0;
@@ -164,9 +161,10 @@ body{
             transform: scale(1.20);
         }
     }
-    &__title{
+    &__heading{
         width: 100%;
         text-align: center;
+        font-size: 2.2em;
         margin-bottom: 0.2em;
     }
     &__word{
@@ -188,7 +186,7 @@ body{
     }
 }
 
-.btn__soon{
+.btn_soon{
     width: 10em;
     height: 2em;
     font-family: $theme_font;
@@ -279,21 +277,27 @@ body{
         }
     }
     section{
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+    }
+    ul,li{
+        display: flex;
+        flex-wrap: wrap;
     }
     ul{
         font-size: 0.9em;
         padding: 0.6em 0 3em 0;
         list-style: none; 
     }
-    p{
-        margin-bottom: 0.4em;
-    }
     li{
         width: 100%;
         padding-bottom: 0.5em;
         display: block;
         text-align: center;
+    }
+    p{
+        margin-bottom: 0.4em;
     }
     @media screen and (min-width:768px){
         width: 80%;
@@ -333,13 +337,15 @@ body{
     }
     h2{
         font-family: $menu1_title_font;
-        font-weight: lighter;
-        font-size: 2.3em;   
+        font-weight: lighter;   
     }
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__home__word{
+    .menu_home__heading{
+        font-size: 2.3em;
+    }
+    .menu_home__word{
         text-transform: uppercase;
         font-family: $menu_text_font1;
         color: $menu1_font_color;
@@ -367,7 +373,7 @@ body{
         }
     }
     @media screen and (max-width:450px){
-        h2{
+        .menu_home__heading{
             font-size: 2em;
         }
     }
@@ -387,22 +393,24 @@ body{
 
 .menu2{
     background-color: $menu2_bg_color;
-    .menu__heading{
-        font-size: 1.8em;
-    }
     h2{
         font-family: $menu2_title_font;
         font-weight: lighter;
-        font-size: 1.5em;
         @include gradient(45deg, $menu2_title_color, $menu2_dessert_color);
     }
     h3,p{
         font-family: $menu_text_font2;
     }
-    .menu__home__word{
+    .menu_home__heading{
+        font-size: 1.5em;
+    }
+    .menu_home__word{
         font-weight: bold;
         font-family: $menu_text_font2;
         color: $menu2_title_color;
+    }
+    .menu__heading{
+        font-size: 1.8em;
     }
     &__entree{
         color: $menu2_entree_color;
@@ -414,7 +422,7 @@ body{
         color: $menu2_dessert_color;
     }
     @media screen and (max-width:450px){
-        h2{
+        .menu_home__heading{
             font-size: 1.2em;
         }
     }
@@ -438,18 +446,17 @@ body{
     background-color: $menu3_bg_color;
     h2{
         font-family: $menu3_title_font;
-        font-size: 2.2em;
         @include gradient(45deg, $menu3_title_color1, $menu3_title_color2);
     }
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__home__word{
+    .menu_home__word{
         font-family: $menu_text_font1;
         color: $menu3_title_color2;
     }
     @media screen and (max-width:450px){
-        h2{
+        .menu_home__heading{
             font-size: 1.9em;
         }
     }
@@ -460,18 +467,17 @@ body{
     h2{
         font-family: $menu4_title_font;
         font-weight: lighter;
-        font-size: 2.2em;
         @include gradient(100deg, $menu4_title_color1, $menu4_title_color2);
     }
     h3,p{
         font-family: $menu_text_font1;
     }
-    .menu__home__word{
+    .menu_home__word{
         font-family: $menu_text_font1;
         color: $menu4_title_color1;
     }
     @media screen and (max-width:450px){
-        h2{
+        .menu_home__heading{
             font-size: 1.9em;
         }
     }
@@ -484,21 +490,17 @@ body{
     position: fixed;
     bottom: 0;
     .nav{
-        font-family: $theme_font;
         font-size: 1.5em;
         width: 100%;
         &__link{
             width: 100%;
             margin: 0.2em;
             text-align: center;
-            &:hover {
-                    animation: wiggle 1.5s infinite;
-                }
-        }
-        &__link:link,
-        &__link:visited{
             text-decoration: none;
             color: $theme_font_color;
+            &:hover {
+                animation: wiggle 1.5s infinite;
+            }
         }
         @media screen and (min-width:768px){
             justify-content: space-between;
