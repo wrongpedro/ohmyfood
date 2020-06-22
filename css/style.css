@@ -8,6 +8,7 @@
 /*Theme*/
 /*Menu Fonts*/
 /*Menu Lists & Maps*/
+/*Breakpoints Responsive*/
 /*MIXIN*/
 /*KEYFRAME*/
 @keyframes wiggle {
@@ -68,19 +69,16 @@ body,
   flex-wrap: wrap;
 }
 
-.header, .footer {
-  width: 100%;
-  background-color: #579c87;
-  color: #fdcb46;
-  font-family: "Roboto", "sans-serif";
-}
-
 body {
   justify-content: center;
 }
 
 /*HEADER*/
 .header {
+  width: 100%;
+  background-color: #579c87;
+  color: #fdcb46;
+  font-family: "Roboto", "sans-serif";
   justify-content: center;
   padding: 1.5em 0;
 }
@@ -316,18 +314,18 @@ body {
   background-color: #fcdfdb;
   color: #3c1218;
 }
-.menu1 .fas {
-  background: linear-gradient(90deg, #f05160, #f6916a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
 .menu1 h2 {
   font-family: "Devonshire", cursive;
   font-weight: lighter;
 }
 .menu1 h3, .menu1 p {
   font-family: "Segoe Print", "Comic Sans MS", cursive;
+}
+.menu1 .fas {
+  background: linear-gradient(90deg, #f05160, #f6916a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .menu1 .menu_home__heading {
   font-size: 2.3em;
@@ -340,6 +338,9 @@ body {
 .menu1 .menu__heading {
   margin: 0 0 0.5em 0;
   font-size: 2.8em;
+}
+.menu1 .menu__service--underline:before, .menu1 .menu__service--underline:after {
+  background-color: #3c1218;
 }
 .menu1__footer {
   justify-content: center;
@@ -403,6 +404,9 @@ body {
 }
 .menu2 .menu__heading {
   font-size: 1.8em;
+}
+.menu2 .menu__service--underline:before, .menu2 .menu__service--underline:after {
+  background-color: #a56799;
 }
 .menu2__entree {
   color: #c67412;
@@ -482,6 +486,10 @@ body {
 
 /*FOOTER*/
 .footer {
+  width: 100%;
+  background-color: #579c87;
+  color: #fdcb46;
+  font-family: "Roboto", "sans-serif";
   padding: 1em 0;
   position: fixed;
   bottom: 0;
