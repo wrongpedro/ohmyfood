@@ -1,0 +1,13 @@
+@mixin ohmyfood-theme{
+    width: 100%;
+    background-color: $theme_color;
+    color: $theme_font_color;
+    font-family: $theme_font;
+}
+
+@mixin gradient ($deg, $color1, $color2) {
+    background: linear-gradient($deg, $color1, $color2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

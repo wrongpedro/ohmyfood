@@ -1,0 +1,67 @@
+.menu1{
+    $menu-style: map-get($menus, menu1);
+    background-color: map-get($menu-style, bg-color);
+    color: map-get($menu-style, primary-font-color);
+    h2{
+        font-family: map-get($menu-style, title-font);
+        font-weight: lighter;   
+    }
+    h3,p{
+        font-family: map-get($menu-style, text-font);
+    }
+    .fas{
+        @include gradient(90deg, map-get($menu-style, icon-color1), map-get($menu-style, icon-color2));
+    }
+    .menu_home__heading{
+        font-size: 2.3em;
+    }
+    .menu_home__word{
+        text-transform: uppercase;
+        font-family: map-get($menu-style, text-font);
+        color: map-get($menu-style, primary-font-color);
+    }
+    .menu__heading{
+        margin: 0 0 0.5em 0;
+        font-size: 2.8em;
+    }
+    .menu__service--underline{
+        &:before,&:after{
+        background-color: map-get($menu-style, primary-font-color);
+        }
+    }
+    &__footer{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-family: map-get($menu-style, title-font);
+        font-weight: lighter;
+        font-size: 2em;
+            .fas{
+                margin-right: 0.2em;
+                font-size: 1.3em;
+            }
+        @media screen and (min-width: map-get($breakpoints, tablet)){
+            font-size: 2.5em;
+            .fas{
+                font-size: 1.2em;
+            }
+        }
+    }
+    @media screen and (max-width: map-get($breakpoints, small-mobile)){
+        .menu_home__heading{
+            font-size: 2em;
+        }
+    }
+    @media screen and (min-width: map-get($breakpoints, tablet)){
+        #fas__top{
+            font-size: 5em;
+            margin-top: 0.5em;
+        }
+        .menu__heading{
+        font-size: 3.5em;
+        }
+        ul{
+            width: 100%;
+        }
+    }
+}

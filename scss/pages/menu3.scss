@@ -1,0 +1,20 @@
+.menu3{
+    $menu-style: map-get($menus, menu3);
+    background-color: map-get($menu-style, bg-color);
+    h2{
+        font-family: map-get($menu-style, title-font);
+        @include gradient(45deg, map-get($menu-style, primary-font-color), map-get($menu-style, secondary-font-color));
+    }
+    h3,p{
+        font-family: map-get($menu-style, text-font);
+    }
+    .menu_home__word{
+        font-family: map-get($menu-style, text-font);
+        color: map-get($menu-style, secondary-font-color);
+    }
+    @media screen and (max-width: map-get($breakpoints, small-mobile)){
+        .menu_home__heading{
+            font-size: 1.9em;
+        }
+    }
+}
