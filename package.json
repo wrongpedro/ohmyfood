@@ -1,19 +1,21 @@
 {
-  "name": "ohmyfood",
-  "version": "1.0.0",
-  "description": "Projet 3 - Open Classroom",
-  "main": "index.js",
-  "scripts": {
-    "sass": "sass --watch ./scss/style.scss:./css/style.css"
-  },
-  "repository": {
+"name": "ohmyfood",
+"version": "1.0.0",
+"description": "Projet 3 - Open Classroom",
+"main": "index.js",
+"scripts": {
+    "sass": "sass --watch ./scss/style.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+},
+"repository": {
     "type": "git",
     "url": "git+https://github.com/wrongpedro/ohmyfood.git"
-  },
-  "author": "Laurent BERRE",
-  "license": "ISC",
-  "bugs": {
+},
+"author": "Laurent BERRE",
+"license": "ISC",
+"browserslist": "last 4 versions",
+"bugs": {
     "url": "https://github.com/wrongpedro/ohmyfood/issues"
-  },
-  "homepage": "https://github.com/wrongpedro/ohmyfood#readme"
+},
+"homepage": "https://github.com/wrongpedro/ohmyfood#readme"
 }
